@@ -66,25 +66,25 @@ function PANEL:Init()
 	timer.Create( "Scoreboard.vguiUpdater", 1, 0, self.UpdateScoreboard )
 	
 	self.lblPing = vgui.Create( "DLabel", self )
-	self.lblPing:SetText( "Ping" )
+	self.lblPing:SetText( "延迟" )
 	
 	self.lblKills = vgui.Create( "DLabel", self )
-	self.lblKills:SetText( "Kills" )
+	self.lblKills:SetText( "K" )
 	
 	self.lblDeaths = vgui.Create( "DLabel", self )
-	self.lblDeaths:SetText( "Deaths" )
+	self.lblDeaths:SetText( "D" )
 
 	self.lblRatio = vgui.Create( "DLabel", self )
-	self.lblRatio:SetText( "Ratio" )
+	self.lblRatio:SetText( "K/D" )
 
 	self.lblHealth = vgui.Create( "DLabel", self )
-	self.lblHealth:SetText( "Health" )
+	self.lblHealth:SetText( "血量" )
 
 	self.lblHours = vgui.Create( "DLabel", self )
-	self.lblHours:SetText( "Total Time Connected" )
+	self.lblHours:SetText( "时长" )
 	
 	self.lblTeam = vgui.Create( "DLabel", self )
-	self.lblTeam:SetText( "Rank" )
+	self.lblTeam:SetText( "职位" )
 	
 	self.lblMute = vgui.Create( "DImageButton", self)
 	
