@@ -15,7 +15,7 @@ $Id$
 Version 2.6 - 2023-06-06 8:00 PM(UTC -03:00)
 
 ]]--
-
+if(engine.ActiveGamemode()!="sandbox")then return end
 -- Setup Class
 Scoreboard = {}
 -- Scoreboard version
