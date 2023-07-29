@@ -109,17 +109,17 @@ local function CCRateUser( player, command, arguments )
 	Target.RatingTimers = Target.RatingTimers or {}
 	
 	if Target.RatingTimers[ RaterID ] and Target.RatingTimers[ RaterID ] > CurTime() - 60 then	
-		Rater:ChatPrint( "Please wait before rating ".. Target:Nick() .." again.\n" );
+		Rater:ChatPrint( "你还不能评价 ".. Target:Nick() .." \n" );
 		return false		
 	end
 	
 	Target.RatingTimers[ RaterID ] = CurTime()
 	
 	-- Tell the target that they have been rated (but don't tell them who to add to the fun and bitching)
-	Target:ChatPrint( Rater:Nick() .. " Gave you a '" .. GetRatingName(RatingID) .. "' rating.\n" );
+	Target:ChatPrint( Rater:Nick() .. " 给你了 '" .. GetRatingName(RatingID) .. "' 的评价.\n" );
 		
 	-- Let the rater know that their vote was counted
-	Rater:ChatPrint( "Gave ".. Target:Nick() .." a '" .. GetRatingName(RatingID) .. "' rating.\n" );
+	Rater:ChatPrint( "给予了 ".. Target:Nick() .." 一个 '" .. GetRatingName(RatingID) .. "' 评价.\n" );
 	
 	sql.Query( "INSERT INTO sui_ratings ( target, rater, rating ) VALUES ( "..TargetID..", "..RaterID..", "..RatingID.." )" )
 
