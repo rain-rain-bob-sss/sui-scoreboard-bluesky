@@ -37,51 +37,51 @@ function PANEL:Init()
 	self.VoteButtons = {}
 
 	self.VoteButtons[5] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[5]:SetUp( "wrench", "builder", "Good at building!", true )
+	self.VoteButtons[5]:SetUp( "wrench", "builder", "非常好建筑!", true )
 
 	self.VoteButtons[4] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[4]:SetUp( "star", "gold_star", "Wow! Gold star for you!", true )
+	self.VoteButtons[4]:SetUp( "star", "gold_star", "闪亮的金星!", true )
 
 	self.VoteButtons[3] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[3]:SetUp( "palette", "artistic", "This player is artistic!", true )
+	self.VoteButtons[3]:SetUp( "palette", "artistic", "艺术", true )
 
 	self.VoteButtons[2] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[2]:SetUp( "heart", "love", "I love this player!", true )
+	self.VoteButtons[2]:SetUp( "heart", "love", "我爱这个玩家", true )
 
 	self.VoteButtons[1] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[1]:SetUp( "emoticon_smile", "smile", "I like this player!", true )
+	self.VoteButtons[1]:SetUp( "emoticon_smile", "smile", "我喜欢这各玩家", true )
 
 
 	self.VoteButtons[10] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[10]:SetUp( "corner16", "curvey", "This player is great with curves" )
+	self.VoteButtons[10]:SetUp( "corner16", "curvey", "曲线" )
 
 	self.VoteButtons[9] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[9]:SetUp( "faceposer_indicator", "best_landvehicle", "This player is awesome with land vehicles" )
+	self.VoteButtons[9]:SetUp( "faceposer_indicator", "best_landvehicle", "非常好陆地载具" )
 
 	self.VoteButtons[8] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[8]:SetUp( "arrow", "best_airvehicle", "This player is awesome with air vehicles" )
+	self.VoteButtons[8]:SetUp( "arrow", "best_airvehicle", "非常好空中载具" )
 
 	self.VoteButtons[7] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[7]:SetUp( "inv_corner16", "stunter", "Wow! you can do amazing Stunts!" )
+	self.VoteButtons[7]:SetUp( "inv_corner16", "stunter", "非常好特技" )
 
 	self.VoteButtons[6] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[6]:SetUp( "gmod_logo", "god", "You are my GOD!" )
+	self.VoteButtons[6]:SetUp( "gmod_logo", "god", "神!" )
 
 
 	self.VoteButtons[15] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[15]:SetUp( "emoticon_smile", "lol", "LOL! You are funny!", true )
+	self.VoteButtons[15]:SetUp( "emoticon_smile", "lol", "XSWL!", true )
 
 	self.VoteButtons[14] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[14]:SetUp( "info", "informative", "This player is very informative!" )
+	self.VoteButtons[14]:SetUp( "info", "informative", "信息丰富的" )
 
 	self.VoteButtons[13] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[13]:SetUp( "user", "friendly", "This player is very friendly!", true )
+	self.VoteButtons[13]:SetUp( "user", "friendly", "非常友好", true )
 
 	self.VoteButtons[12] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[12]:SetUp( "exclamation", "naughty", "This player is naughty!", true )
+	self.VoteButtons[12]:SetUp( "exclamation", "naughty", "调皮", true )
 
 	self.VoteButtons[11] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[11]:SetUp( "gmod_logo", "gay", "This player is GAY!" )
+	self.VoteButtons[11]:SetUp( "gmod_logo", "gay", "同性恋?!?!?!?!?!!?!?!??!!?!?!?!!?!?!??!?!?!?!?!?!?!?!!?!?!?!?!?!?!?!?!?" )
 end
 
 --- SetInfo
@@ -114,22 +114,23 @@ end
 function PANEL:UpdatePlayerData()
 	if not self.Player then return end
 	if not self.Player:IsValid() then return end
-
-	self:SetInfo( 1, "Props:", self.Player:GetCount( "props" ) )
-	self:SetInfo( 1, "HoverBalls:", self.Player:GetCount( "hoverballs" ) )
-	self:SetInfo( 1, "Thrusters:", self.Player:GetCount( "thrusters" ) )
-	self:SetInfo( 1, "Balloons:", self.Player:GetCount( "balloons" ) )
-	self:SetInfo( 1, "Buttons:", self.Player:GetCount( "buttons" ) )
-	self:SetInfo( 1, "Dynamite:", self.Player:GetCount( "dynamite" ) )
-	self:SetInfo( 1, "SENTs:", self.Player:GetCount( "sents" ) )
-
-	self:SetInfo( 2, "Ragdolls:", self.Player:GetCount( "ragdolls" ) )
-	self:SetInfo( 2, "Effects:", self.Player:GetCount( "effects" ) )
-	self:SetInfo( 2, "Vehicles:", self.Player:GetCount( "vehicles" ) )
-	self:SetInfo( 2, "Npcs:", self.Player:GetCount( "npcs" ) )
-	self:SetInfo( 2, "Emitters:", self.Player:GetCount( "emitters" ) )
-	self:SetInfo( 2, "Lamps:", self.Player:GetCount( "lamps" ) )
-	self:SetInfo( 2, "Spawners:", self.Player:GetCount( "spawners" ) )
+        pcall(function() --Do pcall because it would error on other gamemode LOL!
+		self:SetInfo( 1, "道具:", self.Player:GetCount( "props" ) )
+		self:SetInfo( 1, "悬浮屎:", self.Player:GetCount( "hoverballs" ) )
+		self:SetInfo( 1, "推进去:", self.Player:GetCount( "thrusters" ) )
+		self:SetInfo( 1, "气球:", self.Player:GetCount( "balloons" ) )
+		self:SetInfo( 1, "按钮:", self.Player:GetCount( "buttons" ) )
+		self:SetInfo( 1, "炸药:", self.Player:GetCount( "dynamite" ) )
+		self:SetInfo( 1, "LUA物品:", self.Player:GetCount( "sents" ) )
+	
+		self:SetInfo( 2, "布娃娃:", self.Player:GetCount( "ragdolls" ) )
+		self:SetInfo( 2, "特效物品:", self.Player:GetCount( "effects" ) )
+		self:SetInfo( 2, "载具:", self.Player:GetCount( "vehicles" ) )
+		self:SetInfo( 2, "NPC:", self.Player:GetCount( "npcs" ) )
+		self:SetInfo( 2, "特效喷射屎:", self.Player:GetCount( "emitters" ) )
+		self:SetInfo( 2, "老逼(灯):", self.Player:GetCount( "lamps" ) )
+		self:SetInfo( 2, "AD2生成器:", self.Player:GetCount( "spawners" ) )
+	end)
 
 	self:InvalidateLayout()
 end
