@@ -49,7 +49,7 @@ function PANEL:Init()
 	self.VoteButtons[2]:SetUp( "heart", "love", "我爱这个玩家", true )
 
 	self.VoteButtons[1] = vgui.Create( "suispawnmenuvotebutton", self )
-	self.VoteButtons[1]:SetUp( "emoticon_smile", "smile", "我喜欢这各玩家", true )
+	self.VoteButtons[1]:SetUp( "emoticon_smile", "smile", "我喜欢这个玩家", true )
 
 
 	self.VoteButtons[10] = vgui.Create( "suispawnmenuvotebutton", self )
