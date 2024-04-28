@@ -109,7 +109,8 @@ function PANEL:Paint(w,h)
 		surface.SetDrawColor( 255, 255, 255, alpha )
 		surface.DrawTexturedRect( self:GetWide()/2 - 13, self:GetWide()/2 - 8, 26, 26 )
 	elseif self.VoteName == "gay" then
-		surface.SetDrawColor( 255, 0, 215, alpha )
+		local col = HSVToColor( CurTime()*150%360 , 1, 1 )
+		surface.SetDrawColor( col.r,col.g,col.b, alpha )
 		surface.DrawTexturedRect( self:GetWide()/2 - 13, self:GetWide()/2 - 8, 26, 26 )
 	else
 		surface.SetDrawColor( 255, 255, 255, alpha )
