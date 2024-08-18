@@ -2,7 +2,7 @@
 
 SUI Scoreboard v2.6 by Dathus [BR] is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 ----------------------------------------------------------------------------------------------------------------------------
-Copyright (c) 2014 - 2023 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
+Copyright (c) 2014 - 2024 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US> .
@@ -12,14 +12,14 @@ Copyright only on the code that I wrote, my implementation and fixes and etc, Th
 ----------------------------------------------------------------------------------------------------------------------------
 
 $Id$
-Version 2.6 - 2023-06-06 8:00 PM(UTC -03:00)
+Version 2.7 - 2024-05-20 12:17 PM (UTC -03:00)
 
 ]]--
 if(engine.ActiveGamemode()!="sandbox")then return end
 -- Setup Class
 Scoreboard = {}
 -- Scoreboard version
-Scoreboard.version = "2.6.5"
+Scoreboard.version = "2.7.0"
 
 --Setup Loading Log Formatation
 function loadingLog (text)
@@ -41,7 +41,7 @@ Msg( "\n/====================================\\\n")
 Msg( "||           SUI Scoreboard         ||\n" )
 Msg( "||----------------------------------||\n" )
 loadingLog("Version " .. Scoreboard.version)
-loadingLog("Updated on 2023-06-06 8:00 PM")
+loadingLog("Updated on 2024-05-20 12:17 PM")
 Msg( "\\====================================/\n\n" )
 
 if SERVER then

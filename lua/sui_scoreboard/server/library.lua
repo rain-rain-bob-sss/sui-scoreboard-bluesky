@@ -2,7 +2,7 @@
 
 SUI Scoreboard v2.6 by Dathus [BR] is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 ----------------------------------------------------------------------------------------------------------------------------
-Copyright (c) 2014 - 2023 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
+Copyright (c) 2014 - 2024 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US> .
@@ -12,30 +12,16 @@ Copyright only on the code that I wrote, my implementation and fixes and etc, Th
 ----------------------------------------------------------------------------------------------------------------------------
 
 $Id$
-Version 2.6 - 2023-06-06 8:00 PM(UTC -03:00)
+Version 2.7 - 2024-05-19 10:24 PM (UTC -03:00)
 
 ]]--
 
 util.AddNetworkString( "SUIScoreboardPlayerConnecting" )
 
-Scoreboard.SendColor = function (ply)
-  if evolve then
-    tColor = evolve.ranks[ ply:EV_GetRank() ].Color
-  elseif maestro then
-    tColor = maestro.rankcolor(maestro.userrank(ply)) or team.GetColor(ply:Team())
-  else
-    tColor = team.GetColor( ply:Team())   
-  end
-  
-  net.Start("SUIScoreboardPlayerColor")
-  net.WriteTable(tColor)
-  net.Send(ply)
-end
-
 --- When the player joins the server we need to restore the NetworkedInt's
 Scoreboard.PlayerSpawn = function ( ply )
   timer.Simple( 5, function() Scoreboard.UpdatePlayerRatings( ply ) end) -- Wait a few seconds so we avoid timeouts.
-  Scoreboard.SendColor(ply)
+  timer.Simple( 5, function() Scoreboard.SendColor(ply) end)
 end
 
 gameevent.Listen( "player_connect" )

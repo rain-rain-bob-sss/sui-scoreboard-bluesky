@@ -2,7 +2,7 @@
 
 SUI Scoreboard v2.6 by Dathus [BR] is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 ----------------------------------------------------------------------------------------------------------------------------
-Copyright (c) 2014 - 2023 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
+Copyright (c) 2014 - 2024 Dathus [BR] <http://www.juliocesar.me> <http://steamcommunity.com/profiles/76561197983103320>
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US> .
@@ -12,7 +12,7 @@ Copyright only on the code that I wrote, my implementation and fixes and etc, Th
 ----------------------------------------------------------------------------------------------------------------------------
 
 $Id$
-Version 2.6 - 2023-06-06 8:00 PM(UTC -03:00)
+Version 2.7 - 2024-05-19 11:25 AM(UTC -03:00)
 
 ]]--
 
@@ -239,7 +239,7 @@ function PANEL:PerformLayout()
 	self.lblKills:SetPos( self:GetWide() - COLUMN_SIZE*5.4 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 	self.lblHealth:SetPos( self:GetWide() - COLUMN_SIZE*6.4 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 	self.lblHours:SetPos( self:GetWide() - COLUMN_SIZE*10.2 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
-	self.lblTeam:SetPos( self:GetWide() - COLUMN_SIZE*13.1 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
+	self.lblTeam:SetPos( self:GetWide() - COLUMN_SIZE*16 - self.lblKills:GetWide()/2, self.PlayerFrame.y - self.lblPing:GetTall() - 3  )
 end
 
 --- ApplySchemeSettings
